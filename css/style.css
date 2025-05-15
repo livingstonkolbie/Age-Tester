@@ -1,12 +1,17 @@
 
 body {
-    background-color: #ffdd91;
+    /* background-color: #ffdd91; */
+
+    background: #3F5EFB;
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 290%);
+    font-weight: bold;
 }
 
 .title h1 {
-    color: #f95750;
+    font-family: "DynaPuff", system-ui;
+    color: #fee438;
     text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 /* Header */
@@ -16,10 +21,19 @@ body {
 
 
 /* Check Age Button */
-.questionMark {
-    margin-left: 38%;
+.questionMark img {
+    width: 80%;
 }
 
-.questionMark img {
-    width: 15%;
+.questionMark img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Age Results */
+.ageResult h1 {
+    font-family: "DynaPuff", system-ui;
+    color: #fee438;
+    text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+    letter-spacing: 2px;
 }

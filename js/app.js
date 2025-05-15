@@ -1,30 +1,43 @@
 
-// what do i want to do? 
 
+// Variables to store the date parts
+let userMonth, userDay, userYear;
 
-// I - user enters month, day, year
+// Initialize year display
+document.getElementById('yearDisplay').textContent = '(Drag ball LEFT or RIGHT)';
 
-// P 
-// function displayAge()...
-// saves the selections
-// knows todays date
-// 2025 minus the year they choose....
-// when they click the question mark, that function happens
+// Month listener
+document.getElementById('month').addEventListener('change', function() {
+    userMonth = this.value;
+});
 
-// O - display the number age... if they choose 1925 put a dinosaur... if they choose a future date, put a fetus
+// Day listener  
+document.getElementById('day').addEventListener('change', function() {
+    userDay = this.value;
+});
 
-
-
-// Year Function
+// Year listener with display update
 document.getElementById('yearRange').addEventListener('input', function() {
+    userYear = this.value;
     document.getElementById('yearDisplay').textContent = this.value;
 });
 
-
-function displayAge() {
-    // when the user clicks one of the months, it saves that value here
-    let saveMonth = document 
-
-
-    let clickQuestionMark = document.querySelector
-}
+// Calculate age when question mark is clicked
+document.querySelector('.questionMark').addEventListener('click', () => {
+    if (userMonth && userDay && userYear) {
+        const birthDate = new Date(userYear, userMonth - 1, userDay);
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        
+        if (today.getMonth() < birthDate.getMonth() || 
+            (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        
+        // alert(`You are ${age} years old!`);
+        const ageDisplay = document.getElementById('ageDisplay');
+        ageDisplay.textContent = `You are ${age} years old!`;
+    } else {
+        alert('Please select month, day, and year');
+    }
+});
