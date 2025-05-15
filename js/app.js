@@ -76,10 +76,24 @@ questionmark.addEventListener('click', function(){
         
         // alert(`You are ${age} years old!`);
         const ageDisplay = document.getElementById('ageDisplay');
-        ageDisplay.textContent = `You are ${age} years old!`;
+        ageDisplay.innerText = `You are ${age} years old!`;
+
+        
+        if (age < 18) {
+            let oldOrYoung = document.getElementById("oldOrYoung");
+            oldOrYoung.innerText = "You're Still a Kid!"
+        } else if (age > 65) {
+            oldOrYoung.innerText = "Senior Citizens are Great!"
+        } else {
+            oldOrYoung.innerText = "";
+        }
+
     } else {
         alert('Please select month, day, and year');
     }
+
+    
+    
 });
 
 // LESS VERBOSE WAY OF WRITING IT
