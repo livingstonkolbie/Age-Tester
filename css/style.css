@@ -7,6 +7,8 @@ body {
     font-weight: bold;
 }
 
+
+/* Header */
 .title h1 {
     font-family: "DynaPuff", system-ui;
     color: #fee438;
@@ -14,7 +16,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Header */
 .title img {
     width: 15%;
 }
