@@ -22,8 +22,8 @@ yearDisplay.innerText = "(Drag ball L or R)";
 
 // Month listener ... use DOM event 'change'
 let month = document.getElementById("month");
-month.addEventListener('change', function() {
-    userMonth = this.value;
+month.addEventListener('change', () => {
+    userMonth = month.value;
 });
 
 // LESS VERBOSE WAY TO WRITE IT:
@@ -35,8 +35,8 @@ month.addEventListener('change', function() {
 
 // Day listener  
 let day = document.getElementById("day");
-day.addEventListener('change', function() {
-    userDay = this.value;
+day.addEventListener('change', () => {
+    userDay = day.value;
 });
 
 // LESS VERBOSE WAY TO WRITE IT:
@@ -48,9 +48,9 @@ day.addEventListener('change', function() {
 
 // Year listener with display update from up top ... use DOM event 'input'
 let yearRange = document.getElementById("yearRange");
-yearRange.addEventListener('input', function(){
-    userYear = this.value;
-    yearDisplay.innerText = this.value;
+yearRange.addEventListener('input', () => {
+    userYear = yearRange.value;
+    yearDisplay.innerText = yearRange.value;
 });
 
 // LESS VERBOSE WAY TO WRITE IT
@@ -63,7 +63,7 @@ yearRange.addEventListener('input', function(){
 
 // Calculate age when 'click' icon is clicked ... use DOM event 'click' ... also using javascipt Date object... maybe ask mike if he has insights to make it click a little better.
 let questionmark = document.querySelector(".questionMark");
-questionmark.addEventListener('click', function(){
+questionmark.addEventListener('click', () => {
     if (userMonth && userDay && userYear) {
         const birthDate = new Date(userYear, userMonth - 1, userDay);
         const today = new Date();
